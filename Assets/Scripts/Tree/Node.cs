@@ -10,6 +10,9 @@ public class Node
     [SerializeField] Node[] childNodes;
     [SerializeField] NodeType type;
 
+    [SerializeField] Data behaviourData;
+
+
 }
 
 public enum NodeType
@@ -17,4 +20,9 @@ public enum NodeType
     leaf,
     sequence,
     selector
+}
+
+public enum Function
+{
+
 }
