@@ -10,7 +10,6 @@ public class Node
     [SerializeField] Node previousNode;
     [SerializeField] Node[] childNodes;
     [SerializeField] NodeType type;
-
     [SerializeField] Data behaviourData;
 
     //0 done, 1 inProgress, 2 failed

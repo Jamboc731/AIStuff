@@ -48,6 +48,7 @@ public enum Function
     goTo = 1,
     checkBool = 2,
     checkLOS = 3,
-    checkAtPos = 4
+    checkAtPos = 4,
+    chase = 5
 
 }
