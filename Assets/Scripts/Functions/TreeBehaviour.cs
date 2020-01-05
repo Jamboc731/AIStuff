@@ -6,17 +6,32 @@ using UnityEngine;
 public class TreeBehaviour
 {
     
-    public virtual void bStart()
+    public void bStart()
     {
 
     }
 
-    public virtual void bUpdate()
+    public void bUpdate()
     {
 
     }
 
-    public virtual void bEnd()
+    public void bEnd()
+    {
+
+    }
+
+    public void Leaf()
+    {
+
+    }
+
+    public void Select()
+    {
+
+    }
+
+    public void Sequence()
     {
 
     }
