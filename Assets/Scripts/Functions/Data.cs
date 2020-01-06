@@ -39,16 +39,21 @@ public struct Data
         return CheckBool((pos - ob.position).magnitude <= range, invert);
     }
 
+    public void Chase(NavMeshAgent agent)
+    {
+        GoTo(agent, GameManager.x.GetPlayer());
+    }
+
 }
 
 public enum Function
 {
 
-    patrol = 0,
-    goTo = 1,
-    checkBool = 2,
-    checkLOS = 3,
-    checkAtPos = 4,
-    chase = 5
+    patrol0 = 0,
+    goTo1 = 1,
+    checkBool2 = 2,
+    checkLOS3 = 3,
+    checkAtPos4 = 4,
+    chase5 = 5
 
 }

@@ -21,7 +21,7 @@ public class BehaviourTree : MonoBehaviour
     private void Update()
     {
         rootNode.Evaluate(agent, patrols, currentPatrol);
-        Debug.Log(Vector3.Distance(transform.position, patrols[currentPatrol].position));
+        //Debug.Log(Vector3.Distance(transform.position, patrols[currentPatrol].position));
     }
 
     public Transform NextPoint()

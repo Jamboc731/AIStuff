@@ -27,14 +27,17 @@ public class Node
 
     public int Evaluate(NavMeshAgent agent, Transform[] patrols, int currentPatrol)
     {
+        //Debug.Log(type);
         bool inProgress = false;
         switch (type)
         {
             case NodeType.leaf:
+                //Debug.Log(behaviourData.function);
                 Run(agent, GameManager.x.GetPlayer(), patrols[currentPatrol], false, false);
                 break;
 
             case NodeType.sequence:
+                //Debug.Log("Doing sequence of " + childNodes.Length + " length");
                 foreach (var n in childNodes)
                 {
                     int result = n.Evaluate(agent, patrols, currentPatrol);
@@ -47,7 +50,7 @@ public class Node
                     }
                 }
                 if (inProgress) return 1;
-                else return 2;
+                else return 0;
 
             case NodeType.selector:
                 foreach (var n in childNodes)
@@ -78,7 +81,7 @@ public class Node
     {
         switch (behaviourData.function)
         {
-            case Function.patrol:
+            case Function.patrol0:
                 if (behaviourData.CheckAtPos(agent.transform, targetLocation.position, 0.5f, false))
                 {
                     Debug.Log("at pos");
@@ -89,7 +92,7 @@ public class Node
                 else result = 1;
                 break;
 
-            case Function.goTo:
+            case Function.goTo1:
                 try
                 {
                     behaviourData.GoTo(agent, targetLocation);
@@ -101,19 +104,23 @@ public class Node
                 }
                 break;
 
-            case Function.checkBool:
+            case Function.checkBool2:
                 if (behaviourData.CheckBool(toCheck, invert)) result = 0;
                 else result = 2;
                 break;
 
-            case Function.checkLOS:
+            case Function.checkLOS3:
                 if (behaviourData.CheckLOS(agent.transform, player, invert)) result = 0;
                 else result = 2;
                 break;
 
-            case Function.checkAtPos:
+            case Function.checkAtPos4:
                 if (behaviourData.CheckAtPos(agent.transform, targetLocation.position, 0.5f, invert)) result = 0;
                 else result = 2;
+                break;
+
+            case Function.chase5:
+                behaviourData.Chase(agent);
                 break;
 
             default:
